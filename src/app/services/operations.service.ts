@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Observable, of } from "rxjs";
+import { Observable, of, throwError } from "rxjs";
 import { OperationsListResponse } from "../types/operations-list-response.type";
 import { OperationsListResponseMock } from "../mocks/operations-list-response.mock";
 
@@ -9,5 +9,6 @@ import { OperationsListResponseMock } from "../mocks/operations-list-response.mo
 export class OperationsService {
   getOperations(): Observable<OperationsListResponse> {
     return of(OperationsListResponseMock);
+    // return throwError(() => new Error('Ocorreu um erro.'));
   }
 }
